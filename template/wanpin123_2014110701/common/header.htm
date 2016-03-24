@@ -1,0 +1,100 @@
+<!--{subtemplate common/header_common}-->
+	<meta name="application-name" content="$_G['setting']['bbname']" />
+	<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
+	<!--{if $_G['setting']['portalstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" /><!--{/if}-->
+	<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+	<!--{if $_G['setting']['groupstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" /><!--{/if}-->
+	<!--{if helper_access::check_module('feed')}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" /><!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+		<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+	<!--{/if}-->
+	<!--{if !empty($rsshead)}-->$rsshead<!--{/if}-->
+	<!--{if widthauto()}-->
+		<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+		<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'portal'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+	<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+	<!--{/if}-->
+	<link href="template/wanpin123_2014110701/style/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="template/wanpin123_2014110701/style/css/forum.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="template/wanpin123_2014110701/style/js/jquery.min.js"></script>
+		<!--[if IE 6]>
+	<script src="template/wanpin123_2014110701/style/js/DD_belatedPNG_0.0.8a-min.js"></script>
+	<script>
+  DD_belatedPNG.fix('#index img');
+  DD_belatedPNG.fix('#hd img');
+  DD_belatedPNG.fix('#footerLogo img');
+</script>
+<![endif]-->
+	<script type="text/javascript">
+  jq = jQuery.noConflict();
+//以后jquery中的$都用jq代替即可。
+jq(function(){});
+</script>
+<script>
+jq(function(){
+	jq(".link_weixin_li").hover(function(){
+		jq(".link_weixin_ewm",this).stop().animate({"height":"138px"},300);
+	},function(){
+		jq(".link_weixin_ewm",this).stop().animate({"height":"0"},300)
+	})
+})</script>
+</head>
+
+<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+	<div id="append_parent"></div><div id="ajaxwaitid"></div>
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<!--{template common/header_diy}-->
+	<!--{/if}-->
+	<!--{if check_diy_perm($topic)}-->
+		<!--{template common/header_diynav}-->
+	<!--{/if}-->
+	<!--{if CURMODULE == 'topic' && $topic && empty($topic['useheader']) && check_diy_perm($topic)}-->
+		$diynav
+	<!--{/if}-->
+	<!--{if empty($topic) || $topic['useheader']}-->
+		<!--{if $_G['setting']['mobile']['allowmobile'] && (!$_G['setting']['cacheindexlife'] && !$_G['setting']['cachethreadon'] || $_G['uid']) && ($_GET['diy'] != 'yes' || !$_GET['inajax']) && ($_G['mobile'] != '' && $_G['cookie']['mobile'] == '' && $_GET['mobile'] != 'no')}-->
+			<div class="xi1 bm bm_c">
+			    {lang your_mobile_browser}<a href="{$_G['siteurl']}forum.php?mobile=yes">{lang go_to_mobile}</a> <span class="xg1">|</span> <a href="$_G['setting']['mobile']['nomobileurl']">{lang to_be_continue}</a>
+			</div>
+		<!--{/if}-->
+		<!--{if $_G['setting']['shortcut'] && $_G['member'][credits] >= $_G['setting']['shortcut']}-->
+			<div id="shortcut">
+				<span><a href="javascript:;" id="shortcutcloseid" title="{lang close}">{lang close}</a></span>
+				{lang shortcut_notice}
+				<a href="javascript:;" id="shortcuttip">{lang shortcut_add}</a>
+
+			</div>
+			<script type="text/javascript">setTimeout(setShortcut, 2000);</script>
+		<!--{/if}-->			
+<div class="index" id="index">	
+<div class="headbg">
+			<div class="head">
+			<div class="mo" style=" left:-120px; padding-top:15px; position:absolute; ">
+	<!--{hook/global_cpnav_extra2}-->
+	</div>
+				<h1 class="logo">
+					<!--{eval $mnid = getcurrentnav();}-->
+					<!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h1>
+				<div id="nav" class="nav" style="left:140px; width:605px; height:70px; overflow:hidden">
+					<ul>
+						<!--{loop $_G['setting']['navs'] $nav}-->
+							<!--{if $nav['available'] && (!$nav['level'] || ($nav['level'] == 1 && $_G['uid']) || ($nav['level'] == 2 && $_G['adminid'] > 0) || ($nav['level'] == 3 && $_G['adminid'] == 1))}--><li {if $mnid == $nav[navid]}class="active" {/if}$nav[nav]></li><!--{/if}-->
+						<!--{/loop}-->
+					</ul>
+				</div>
+				<!--{subtemplate common/searchform}--><!--{subtemplate member/member}-->
+</div></div></div>
+	<!--{/if}-->
+<div id="wp" class="wp">

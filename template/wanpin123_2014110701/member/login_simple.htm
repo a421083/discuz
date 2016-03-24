@@ -1,0 +1,50 @@
+<!--{if $_G['uid']}-->
+<div class="solidline" style=" border:#E8EDF1 1px solid;"></div>
+<!--{elseif !$_G[connectguest]}-->
+<div class="wrapper">
+<div class="login">
+<script type="text/javascript" src="{$_G[setting][jspath]}logging.js?{VERHASH}"></script>
+<form method="post" autocomplete="off" id="lsform" action="member.php?mod=logging&action=login&loginsubmit=yes&infloat=yes&lssubmit=yes" onsubmit="{if $_G['setting']['pwdsafety']}pwmd5('ls_password');{/if}return lsSubmit();">
+<span id="return_ls" style="display:none"></span>
+
+
+
+<div class="item item-account">
+<input type="text" class="inp" name="username" id="ls_username" placeholder="邮箱/帐号" autocomplete="off" tabindex="901" >
+	<div class="opt">
+	<label for="form_remember"><input type="checkbox" value="2592000" name="cookietime" id="form_remember">记住我</label>
+	</div>
+</div>
+
+<div class="item item-passwd">
+<input type="password" class="inp" name="password" id="ls_password" placeholder="密码" tabindex="902" >
+		<div class="opt">
+		<label id="lbl_forget"><a href="member.php?mod=logging&action=login&viewlostpw=1">忘记密码</a></label>
+		</div>
+</div>
+<div class="item-submit">
+<button type="submit" class="bn-submit">登录</button>
+<label id="lbl_sina"><a href="xwb.php?m=xwbAuth.login"><i></i>微博</a></label>
+<label id="lbl_qq"><a href="connect.php?mod=login&op=init&referer=index.php&statfrom=login"><i></i>QQ</a></label>
+</div>
+<input type="hidden" name="quickforward" value="yes" />
+<input type="hidden" name="handlekey" value="ls" />
+</form>
+<script type="text/ecmascript">document.getElementById('ls_username').focus();</script>
+<!--{if $_G['setting']['pwdsafety']}-->
+<script type="text/javascript" src="{$_G['setting']['jspath']}md5.js?{VERHASH}" reload="1"></script>
+<!--{/if}-->
+</div>
+<div class="reg">
+	<a class="lnk-reg" href="member.php?mod=register">
+	加入我们
+	<i>注册</i>
+	</a>
+	<div class="nb-info">
+	<b>发现更多生活</b>
+</div>
+</div>
+</div>
+<!--{else}-->
+<div class="solidline" style=" border:#E8EDF1 5px solid;"></div>
+<!--{/if}-->

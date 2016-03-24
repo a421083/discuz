@@ -1,0 +1,44 @@
+<div class="xm_tp">
+		<div class="xm_p_tp">
+			<div class="y">
+				<div class="xm_tp_action">
+					<span class="y replies">$_G[forum_thread][allreplies]</span>
+					<span class="y views">$_G[forum_thread][views]</span>
+				</div>
+			</div>
+			<a class="xm_avt" href="home.php?mod=space&uid=$thread['authorid']" target="_blank"><img src="uc_server/avatar.php?uid=$thread['authorid']&size=small" /></a>
+			<h1>$_G[forum_thread][subject]</h1>
+					<div class="xm_tp_action">
+                        <span><a href="home.php?mod=space&uid=$thread[authorid]">$thread[author]</a></span>
+                        <span>于$post[dateline]发表</span>
+						
+						<!--{if $_G['forum_thread']['typeid'] && $_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}-->
+						<!--{if !IS_ROBOT && ($_G['forum']['threadtypes']['listable'] || $_G['forum']['status'] == 3)}-->
+							<a href="forum.php?mod=forumdisplay&fid=$_G[fid]&filter=typeid&typeid=$_G[forum_thread][typeid]">[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]</a>
+						<!--{else}-->
+							[{$_G['forum']['threadtypes']['types'][$_G['forum_thread']['typeid']]}]
+						<!--{/if}-->
+					     <!--{/if}-->
+					
+						
+                        <!--{if in_array($thread['displayorder'], array(1, 2, 3, 4))}--><span><em style="color: #ed5669;">置顶</em> </span><!--{/if}-->
+						<span class="xg1"><!--{if $post['invisible'] == 0}-->
+						<!--{if !IS_ROBOT && !$_GET['authorid'] && !$_G['forum_thread']['archiveid']}-->
+							<a href="forum.php?mod=viewthread&tid=$post[tid]&page=$page&authorid=$post[authorid]" rel="nofollow">{lang thread_show_author}</a>
+						<!--{elseif !$_G['forum_thread']['archiveid']}-->
+							<a href="forum.php?mod=viewthread&tid=$post[tid]&page=$page" rel="nofollow">{lang thread_show_all}</a>
+						<!--{/if}-->
+					<!--{/if}-->
+					<!--{if !IS_ROBOT}-->
+						<!--{if $post['invisible'] == 0}--><a href="forum.php?mod=viewthread&action=printable&tid=$_G[tid]" title="{lang thread_printable}" target="_blank">[打印]</a>
+						<!--{/if}-->
+						<a href="forum.php?mod=redirect&goto=nextoldset&tid=$_G[tid]" title="{lang last_thread}">[上一主题]</a>
+						<a href="forum.php?mod=redirect&goto=nextnewset&tid=$_G[tid]" title="{lang next_thread}"> [下一主题]</a>
+					<!--{/if}-->  
+                   
+                        </span>
+                    </div>
+		</div>
+</div>
+
+

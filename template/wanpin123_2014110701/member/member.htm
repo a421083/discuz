@@ -1,0 +1,75 @@
+	<div id="menberz">
+		<div id="top_usermenu" class="status_loginned">
+					<!--{if $_G['uid']}-->
+								<div class="imguserset"></div>
+								
+								<div class="top_popmenu" id="mn_myaccount_menu" style="position: absolute;top: 69px;z-index: 999;width: 108px; right:0px;">
+											
+											 <ul class="listmenu">
+											
+											  <li class="firstname"><a class="icfirst" href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a></li>
+											 <li><a href="home.php?mod=space&do=notice"><i class="ic02"></i>{lang remind}
+									  <!--{if $_G[member][newprompt]}--><span style="color:#FF0000; display:inline">($_G[member][newprompt])</span><!--{/if}--></a></li>
+									  			<!--{if check_diy_perm($topic)}-->
+											  <li><a href="javascript:openDiy();" ><i class="ic03"></i>DIY设置</a></li>
+											  <!--{/if}-->
+											  <li><a href="home.php?mod=space&uid=$_G[uid]&do=thread&view=me&from=space"><i class="ic04"></i>我的帖子</a></li>
+											  <li><a href="home.php?mod=space&do=favorite&view=me"><i class="ic05"></i>我的收藏</a></li>
+											  <li><a href="home.php?mod=spacecp"><i class="ic06"></i>个人设置</a></li>
+										     </ul>
+							
+											<ul class="listmenu">
+											<!--{if ($_G['group']['allowmanagearticle'] || $_G['group']['allowpostarticle'] || $_G['group']['allowdiy'] || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 6) || getstatus($_G['member']['allowadmincp'], 2) || getstatus($_G['member']['allowadmincp'], 3))}-->
+												<li><a href="portal.php?mod=portalcp"><!--{if $_G['setting']['portalstatus'] }--><i class="ic07"></i>{lang portal_manage}<!--{else}--><i class="ic07"></i>{lang portal_block_manage}<!--{/if}--></a></li>
+											<!--{/if}-->
+											<!--{if $_G['uid'] && $_G['group']['radminid'] > 1}-->
+												<li><a href="forum.php?mod=modcp&fid=$_G[fid]" target="_blank"><i class="ic08"></i>{lang forum_manager}</a></li>
+											<!--{/if}-->
+											<!--{if $_G['uid'] && $_G['adminid'] == 1 && $_G['setting']['cloud_status']}-->
+												<li><a href="admin.php?frames=yes&action=cloud&operation=applist" target="_blank"><i class="ic09"></i>{lang cloudcp}</a></li>
+											<!--{/if}-->
+											<!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}-->
+												<li><a href="admin.php" target="_blank"><i class="ic10"></i>{lang admincp}</a></li>
+												<!--{/if}-->
+												
+												<li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><i class="ic11"></i>安全退出</a></li>
+											</ul>
+
+									</div>
+					
+					<!--{elseif !$_G[connectguest]}-->
+								
+								<div class="imgloginuser"></div>
+								
+								<div class="top_popmenu" id="mn_myaccount_menu" style="position: absolute;top: 69px;z-index: 10000;width: 108px; right:0px;">
+											
+											 <ul class="listmenu">
+												 <li><a href="member.php?mod=logging&amp;action=login"><i class="ic01"></i>登录</a></li>
+												 <li><a href="member.php?mod=register"><i class="ic11"></i>注册</a></li>
+											</ul>
+								</div>
+					<!--{else}-->
+								<div class="imguserset"></div>
+								<div class="top_popmenu" id="mn_myaccount_menu" style="position: absolute;top: 69px;z-index: 10000;width: 108px; right:0px;">
+									 <ul class="listmenu">
+									 	<li class="firstname"><a class="icfirst" href="home.php?mod=space&uid=$_G[uid]" target="_blank" title="{lang visit_my_space}">{$_G[member][username]}</a></li>
+										<li><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}"><i class="ic11"></i>安全退出</a></li>
+									</ul>
+								</div>
+					<!--{/if}-->
+					</div>
+					</div>
+<script>
+jq(function() {
+	jq("#top_usermenu").hover(
+	  function () {
+		 jq(this).addClass("on");
+	  },
+	  function () {
+		 jq(this).removeClass("on");
+	  }
+	);
+});
+</script>
+<style>.imgloginuser{ background:url("template/wanpin123_2014110701/style/images/loginuser.png") no-repeat 5px 20px; width:50px; height:70px;}
+.imguserset{ background:url("template/wanpin123_2014110701/style/images/userset.png") no-repeat 5px 15px; width:50px; height:70px;}</style>

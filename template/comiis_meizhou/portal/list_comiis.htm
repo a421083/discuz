@@ -1,0 +1,106 @@
+<!--{template common/header}-->
+<!--[name]忽悠兄分享-梅州社区列表页[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<!--{if $comiis_wz_nv==1}-->
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+</div>
+<!--{/if}-->
+<!--{ad/text/wp a_t}-->
+<!--[diy=comiis_wz_topad]--><div id="comiis_wz_topad" class="area"></div><!--[/diy]-->
+<!--{if $comiis_wz_fl==1 && $cat[others]}-->
+<div class="comiis_wz_fl cl"<!--{if $comiis_wz_nv!=1}--> style="margin-top:10px;"<!--{/if}-->>
+	<!--{loop $cat[others] $value}-->
+	<a href="{$portalcategory[$value['catid']]['caturl']}"{if $value[catid]==$cat[catid]} class="on"{/if}>$value[catname]</a>
+	<!--{/loop}-->
+</div>
+<!--{/if}-->
+<style id="diy_style" type="text/css"></style>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+<div id="ct" class="ct2 wp comiis_ct cl">
+	<div class="mn">
+		<!--{ad/articlelist/mbm hm/1}--><!--{ad/articlelist/mbm hm/2}-->
+		<!--[diy=listcontenttop]--><div id="listcontenttop" class="area"></div><!--[/diy]-->
+		<div class="bm">
+			<div class="bm_h cl comiis_wz_titname">
+				<!--{if $_G[setting][rssstatus] && !$_GET['archiveid']}--><a href="portal.php?mod=rss&catid=$cat[catid]" class="y xi2 rss" target="_blank" title="RSS">{lang rss_subscribe_this}</a><!--{/if}-->
+				<!--{if ($_G['group']['allowpostarticle'] || $_G['group']['allowmanagearticle'] || $categoryperm[$catid]['allowmanage'] || $categoryperm[$catid]['allowpublish']) && empty($cat['disallowpublish'])}-->
+				<a href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]" class="y xi2 addnew">{lang article_publish}</a>
+				<!--{/if}-->
+				<h2>$cat[catname]</h2>
+			</div>
+			<!--{if $cat[subs]}-->
+			<div class="bm_c bbda comiis_wz_ejfl">
+				{lang sub_category}:&nbsp;&nbsp;
+				<!--{eval $i = 1;}-->
+				<!--{loop $cat[subs] $value}-->
+				<!--{if $i != 1}--><span class="pipe">/</span><!--{/if}--><a href="{$portalcategory[$value['catid']]['caturl']}" class="xi2">$value[catname]</a><!--{eval $i--;}-->
+				<!--{/loop}-->
+			</div>
+			<!--{/if}-->
+			<div class="bm_c xld">
+			<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+				<dl class="bbda cl">
+					<dd class="xs2 cl">					
+					<!--{if $comiis_wz_pic==1 && $value[pic]}--><div class="comiis_atc"><a href="$article_url" target="_blank"><img src="$value[pic]" alt="$value[title]" class="tn" /></a></div><!--{/if}-->
+					<h3 class="comiis_wztit"><a href="$article_url" target="_blank" class="xi2" $highlight>$value[title]</a> <!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></h3>
+					<div class="comiis_wzbody">
+					$value[summary]
+					<p>
+						<!--{if $value[catname] && $cat[subs]}--><label><a href="{$portalcategory[$value['catid']]['caturl']}" class="xg1">$value[catname]</a></label>&nbsp;&nbsp;<!--{/if}-->
+						<span class="xg1"> $value[dateline]</span>
+						<!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+						<span class="xg1">
+							<span class="pipe">|</span>
+							<label><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a></label>
+							<span class="pipe">|</span>
+							<label><a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></label>
+						</span>
+						<!--{/if}-->
+					</p>
+					</div>
+					</dd>
+				</dl>
+			<!--{/loop}-->
+			</div>
+			<!--[diy=listloopbottom]--><div id="listloopbottom" class="area"></div><!--[/diy]-->
+		</div>
+		<!--{ad/articlelist/mbm hm/3}--><!--{ad/articlelist/mbm hm/4}-->
+		<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+		<!--[diy=diycontentbottom]--><div id="diycontentbottom" class="area"></div><!--[/diy]-->
+	</div>
+	<div class="sd pph">
+		<div class="drag">
+			<!--[diy=diyrighttop]--><div id="diyrighttop" class="area"></div><!--[/diy]-->
+		</div>
+		<!--{if $comiis_wz_fl==2 && $cat[others]}-->
+			<div class="comiis_wz_titname cl"><h2>{lang category_related}</h2></div>
+			<div class="comiis_wz_rfl cl">
+				<ul>
+					<!--{loop $cat[others] $value}-->
+					<li>&bull; <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a></li>
+					<!--{/loop}-->
+				</ul>
+			</div>
+		<!--{/if}-->
+		<!--[diy=comiis_wz_rdiy]--><div id="comiis_wz_rdiy" class="area"></div><!--[/diy]-->
+		<div class="drag">
+			<!--[diy=diy2]--><div id="diy2" class="area"></div><!--[/diy]-->
+		</div>
+	</div>
+</div>
+<div class="wp mtn">
+	<!--[diy=diy3]--><div id="diy3" class="area"></div><!--[/diy]-->
+</div>
+<!--{template common/footer}-->

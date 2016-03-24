@@ -1,0 +1,655 @@
+/* ----------------------------------
+
+Main CSS file for mobanbus.
+http://www.mobanbus.cn.
+Created by 模板巴士.
+
+-------------------------------------*/
+
+@import url(styles.css); 
+
+html {height:100%;overflow-x:hidden; background-color:#333}
+body{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box; position:relative; z-index:0;width:100%;max-width:640px;min-width:300px;min-height:100%;margin:0 auto;box-shadow:0 0 10px rgba(0,0,0,0.3)}
+body{overflow-x:hidden;line-height:1.5;background-color:#E3E5E8!important;background-image:none;}
+body,input,button,select,textarea{font:12px/1.5 "microsoft yahei";color:rgb(105,105,105);}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;margin:0;padding:0}
+a{text-decoration:none!important;-webkit-transition:0.25s;transition:0.25s;}
+a:hover,a:focus{text-decoration:none;}
+a:focus{outline:none;}
+a.bus_colora:link,a.bus_colora:visited,a.bus_colora:hover{color:#607fa6}
+a.bus_colorb:link,a.bus_colorb:visited,a.bus_colorb:hover{color:#fff}
+a.react:active,a.react.react-active{background:rgba(0,0,0,.1);}
+a.react{display:block;color:inherit;}
+a:active,a:hover{outline:none!important;}
+a:visited{opacity:0.7}
+.clear{clear:both;content:" ";display:block;height:0px;}
+.block{display:block}
+img:honver{opacity:0.8}
+::-moz-selection{background:#EFCFB8;color:#fff}
+::selection{background:#EFCFB8;color:#fff}
+.bus_w100{width:100%}
+.bus_w96{width:96%; margin-left:2%;margin-right:2%}
+.bus_fl{float:left!important}
+.bus_fr{float:right!important}
+.bus_hide{display:none!important;}
+.bus_box{}
+.bm{border:none;background:none}
+.mt10{margin-top:10px!important;}
+.mt15{margin-top:15px!important;}
+.mt20{margin-top:20px!important;}
+.ml10{ margin-left:10px;}
+.mb10{margin-bottom:10px!important;}
+.mb15{margin-bottom:15px!important;}
+.mb20{margin-bottom:20px!important;}
+.pr20{padding-right:20px!important;}
+.pl5{padding-left:5px!important;}
+.pl10{padding-left:10px!important;}
+.pr10{padding-right:10px!important;}
+.pt5{padding-top:5px!important;}
+.pt10{padding-top:10px!important;}
+.pt20{padding-top:20px!important;}
+.pb20{padding-bottom:20px!important;}
+.pb10{padding-bottom:10px!important;}
+.tedt{border:none}
+.bus_relative{position:relative;}
+.bus_border{border:1px solid #ddd}
+.bus_radius{border-radius:5px}
+.tedt .pt{box-shadow:2px 2px 2px #F0F0F0 inset;border:1px solid #CCC;}
+.tedt .bar{background:none}
+input,textarea{background-color:#FFF;min-height:35px!important;border-radius:4px;border:1px solid #CCC;box-shadow:0px 1px 1px rgba(0,0,0,0.075) inset;transition:border 0.2s linear 0s,box-shadow 0.2s linear 0s;}
+.bus_copyright{display:none}
+.bus_sd{background-color:#fff;/* -moz-box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);-webkit-box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);*/}
+.mobanbus_bd{width:96%;margin: 0 2%; overflow:hidden; float:left;position:relative}
+.bus_btn{display:block;padding:2px 10px!important;box-shadow:0 0 1px rgba(0,0,0,0.3);color:#FFF!important;border-radius:5px;text-align:center;float:left}
+.bus_btn.active,.bus_btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05);-moz-box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05);box-shadow:inset 0 2px 4px rgba(0,0,0,.15),0 1px 2px rgba(0,0,0,.05)}
+.bus_waterfall{margin:0 auto;}
+#waterfall .busload{transition:0.5s ease-in-out 0s;-moz-transition:0.5s ease-in-out 0s;-webkit-transition:0.5s ease-in-out 0s;-o-transition:0.5s ease-in-out 0s;}
+.masonry-brick{display:list-item!important}
+.busbox{ width:100%; float:left; display:block;}
+
+
+#LoadProcess{position:fixed;width:100%;height:100%;left:0;top:0;background:#fff;z-index:9999999;visibility:visible}
+.mobanbusload{position: absolute; height: 30px; top:45%;width:100%;text-align:center; color: #67CF22;}
+.mobanbusload > div{width:20px;height:20px;background-color:#67CF22;border-radius:100%;display:inline-block;-webkit-animation:bouncedelay 1.4s infinite ease-in-out;animation:bouncedelay 1.4s infinite ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both;}
+.mobanbusload .bounce1{-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}
+.mobanbusload .bounce2{-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0.0)}40%{-webkit-transform:scale(1.0)}}@keyframes bouncedelay{0%,80%,100%{transform:scale(0.0);-webkit-transform:scale(0.0);}40%{transform:scale(1.0);-webkit-transform:scale(1.0);}}
+
+
+/*head*/
+.mobanbus_header{width:100%;}
+.ie6 .mobanbus_header{overflow:hidden}
+.mobanbus_header.bus_index{}
+.mobanbus_header.bus_index{ min-width:300px;}
+.mobanbus_header.bus_index .head_ico{display: block; border: 1px solid #fff; border-radius: 50%; color:#fff;font-size:1.8em;text-align: center;width:30px;height:30px;line-height:30px; position:absolute; left:10px; top: 6px;}
+.mobanbus_header.bus_index .bus_nav{position: fixed;top: 0px;left: 0px; z-index:99;width:100%;height:44px;background-color:#FB6156;box-shadow:0 0 4px rgba(0,0,0,0.2)}
+.mobanbus_header.bus_index .logo_index{float:left;overflow: hidden;width:60%;height:100%;line-height: 35px;text-indent: 55px;}
+.mobanbus_header.bus_index .logo_index h1.bus_logo a{ display:block;color:#fff; text-indent:-999em;font-size:1.5em; height:44px; line-height:44px; float:left;width:100%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;text-shadow:0 0 1px rgba(0,0,0,0.1);}
+.mobanbus_header.bus_index .logo_index h1.bus_logo a img{ height:36px; margin:4px 0; float:left; padding-left:10px;}
+.mobanbus_header.bus_index .logo_index h2.bus_logo_des{color:#333; height:35px; font-size:1.1em; font-weight:normal; float:left; padding:0 20px 0 5px;max-width:155px; background-color:#eee;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.mobanbus_header.bus_index .bus_navlist{width:96%;background-color:#fff; margin-top:45px;padding:8px 2%;float:left;}
+.mobanbus_header.bus_index .bus_navlist li{width:20%;text-align:center;float:left}
+.mobanbus_header.bus_index .bus_navlist li a{font-size:1.3em;color:#777;}
+
+.mobanbus_header.bus_global{ min-width:300px;}
+.mobanbus_header.bus_global .head_ico{display: block; border: 1px solid #FB6156; border-radius: 50%; color:#FB6156;font-size:1.8em;text-align: center;width:30px;height:30px;line-height:30px; position:absolute; left:10px; top: 6px;}
+.mobanbus_header.bus_global .bus_nav{position: fixed;top: 0px;left: 0px; z-index:99;width:100%;height:44px;background-color:#fff; border-bottom:1px solid #FB6156;box-shadow:0 0 4px rgba(0,0,0,0.2)}
+.mobanbus_header.bus_global .logo_index{float:left;overflow: hidden;width:100%;padding-top:8px; text-align: center;}
+.mobanbus_header.bus_global .logo_index h1.bus_logo a{display: block;max-width:70%; margin: 0 auto; color:#FB6156;border-radius: 5px; font-size:1.2em; line-height:30px;padding: 0; white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.mobanbus_header.bus_global .logo_index h1.bus_logo a img{ height:22px; margin:11px 0; float:left; padding-left:50px;}
+.mobanbus_header.bus_global .logo_index h2.bus_logo_des{color:#333; height:35px; font-size:1.1em; font-weight:normal; float:left; padding:0 20px 0 5px;max-width:155px; background-color:#eee;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.mobanbus_header.bus_global .bus_navlist{width:96%;background-color:#FB6156; margin-top:45px;padding:8px 2%;float:left;}
+.mobanbus_header.bus_global .bus_navlist li{width:20%;text-align:center;float:left}
+.mobanbus_header.bus_global .bus_navlist li a{font-size:1.3em;color:#fff;}
+
+
+.mobanbus_header.bus_index .icon-edit{color: #fff;}
+.mobanbus_header.bus_global .icon-edit{color: #FB6156;}
+
+
+.bus_headads{ width:96%; margin:15px 2% 0 2%; float:left;}
+.bus_headads a img{ width:100%;float:left;}
+
+
+.bus_headbox{display:block;height:40px;float:left;width:100%;}
+
+.mobanbus_header .icon-edit,.mobanbus_header .icon-search,.mobanbus_header .icon-user,.mobanbus_header .icon-home{font-size:1.8em;text-align: center;position:absolute;top:0px;width:40px;height:45px;line-height:47px;}
+.mobanbus_header .icon-edit{right:5px;}
+.mobanbus_header .icon-user{right:35px;}
+.mobanbus_header .icon-user a,.mobanbus_header .icon-search a,.mobanbus_header .icon-edit a{color:#f9f9f9; display:block;position:absolute;top:0px;width:40px;height:45px;}
+.mobanbus_toppic{ width:100%; float: left; overflow: hidden; position:relative}
+.mobanbus_toppic img{width: 100%;}
+.buside .icon-reorde, .mobanbus_toppic .icon-reorder{color:#cdcdcd;font-size:1.8em;text-align: center;position:absolute; z-index:99; width:40px;height:45px;line-height:47px;}
+.mobanbus_toppic .icon-reorder{top:5px; left:5px}
+.buside .icon-reorde{top:5px; right:5px}
+
+.mobanbus_loginitem { padding:30px 0}
+.mobanbus_loginitem p{ line-height:30px; color:#999; text-align:center; font-size:1.2em;}
+.mobanbus_loginitem a{ display:block; padding:5px 0; width:30%; float:left; text-align:center; color:#fff; font-size:1.4em; border-radius:3px;}
+.mobanbus_loginitem a.buslogin{ background-color:#4998e5; margin:0 2% 0 18%;}
+.mobanbus_loginitem a.busregister{background-color:#7bbe5c; margin:0 18% 0 2%;}
+
+
+.bus_postnav{ width:50px; height:50px;border-radius:25px;position:fixed; bottom:10px; left:70px; background-color:#FB6156}
+.bus_postnav i{ font-size:1.5em; line-height:50px;text-align:center; padding-left:4px;}
+.bus_postnav a{ width:100%; line-height:40px; color:#fff; font-size:1.4em;}
+.bus_back{ position:fixed; width:50px; height:50px; top:16px; left:7px; z-index:9;}
+.bus_back .icon-angle-left{ display:block; width:50px; height:50px; border-radius:25px; text-align:center; line-height:50px; font-size:3em; background:rgba(0,0,0,0.5); color:#fff;}
+
+.mobanbus_bottom{z-index:99;width:100%;height:45px;background:#FB6156;overflow:hidden!important;}
+.mobanbus_bottom ul li{width:20%;height:100%;font-size:12px;line-height:15px;color:#fff;float:left;text-align:center;}
+.mobanbus_bottom ul li a{display:block;width:100%;height:100%;color:#fff}
+.mobanbus_bottom ul li span{display:block;float:left;height:27px;line-height:30px;font-size:24px;width:100%;}
+.mobanbus_bottom ul li span.icon-home{font-size:28px}
+.bus_path{width:98%;padding-left:2%;color:#999;float:left;}
+.bus_path .bus_nvn a{color:#999;line-height:35px;}
+.bus_forumbd{background-color:#fff;margin-top:10px; overflow:hidden; }
+.bus_forumbd .bus_forum_tt{padding:0 10px;line-height:40px!important;font-size:16px;height:40px!important;background-image:none!important;border-bottom:1px dashed #ddd;}
+.bus_forumbd .bus_forum{}
+.bus_forumbd .bus_forum li{width:100%;height:50px;padding:5px;border-bottom:1px dashed #ddd;margin-bottom:-1px;}
+.bus_forumbd .bus_forum_pic{float:left}
+.bus_forumbd .bus_forum_pic img{width:50px;height:50px;}
+.bus_forumbd .bus_forum_txt{padding-left:60px;position:relative}
+.bus_forumbd .bus_forum_txt .bus_name{font-size:14px;font-weight:bold;line-height:30px}
+.bus_forumbd .bus_forum_txt .num{position:absolute;right:0px;top:5px;width:auto;padding:2px 4px;height:12px;line-height:12px;text-align:center;background:#69c;border-radius:16px;font-size:10px;color:#fff;}
+.bus_noshow{ display:block; width:100%; line-height:50px; text-align:center}
+.bus_noshow a{ color:#FB6156; padding-left:8px;}
+.mobanbus_list{width:100%; margin-bottom:15px;}
+.mobanbus_list ul li.bus_wtf_item{width:100%; margin:0 0 15px 0!important; border-bottom:1px solid #eee;float:left;}
+.mobanbus_list ul li.bus_dark{background-color:#f9f9f9;}
+.mobanbus_list .bus_wtf .bus_wtf_pic a{width:100%;overflow:hidden;float:left;}
+.mobanbus_list .bus_wtf .bus_wtf_pic a img{margin-right:10px; float:left}
+.mobanbus_list .bus_wtf_pic p{ max-height:90px; overflow:hidden; line-height:21px;color:#888; padding-right:10px;}
+.mobanbus_list .bus_wtf_pic b { display:block; white-space:nowrap;text-overflow:ellipsis;overflow:hidden; height:28px; font-size:14px;color:#555}
+.mobanbus_list .loading{ display:none!important}
+.mobanbus_list .bus_card{position:relative;float:left; padding-top:10px; margin-bottom:15px;}
+.mobanbus_list .bus_card .icon_tu,.mobanbus_list .bus_card .icon_top{position:absolute;top:0px;left:0}
+.mobanbus_list .bus_card h3 a{display:block;width:100%;padding:0 0 5px 0;font-size:14px;line-height:25px; font-weight:normal; float:left;word-wrap:break-word;}
+.mobanbus_list .bus_pre{width:96%;padding:0 2% 2px 2%;line-height:25px;font-size:14px;float:left;}
+.mobanbus_list .bus_card .auth{ width:100%; padding:0 0 5px 0;color:#999;font-size:14px;float:left;}
+.mobanbus_list .bus_card .auth img{width:32px; height:32px; border-radius:3px; margin:0 8px 0 10px;float:left;}
+.mobanbus_list .bus_card .auth span{font-size:12px; line-height:16px;float:left;}
+.mobanbus_list .bus_card .auth a{color:#999;}
+.mobanbus_list .bus_card .auth .bus_fr{ padding-right:10px;}
+.mobanbus_list .bus_card .bus_box{ padding:5px 0 15px 50px; float:left;}
+.mobanbus_list .bus_card .bus_wtf_pic a{width:100%; max-height:120px; overflow:hidden;float:left;}
+.mobanbus_list .bus_card .bus_wtf_pic a img{margin-right:10px; max-height:90px; float:left}
+.threadlist .thread_tit{font-size:14px}
+.bus_forum_guid #a_favorite{ color:#fff; border-radius:3px; line-height:25px; padding:0 8px; background-color:#FB6156; float:right; margin:15px 10px 0 0;}
+.bus_forum_guid .tit .titico img{height:50px; display:block; max-width:20%; float:left; margin:0 3% 10px 3%;}
+.bus_forum_guid .tit p{ display:block; max-height:57px; overflow:hidden}
+.bus_sd.bus_forumbd.pb10.mb15{ margin-top:0}
+
+.bus_order_coce{width:96%;float: left; margin:0px 2% 5px 2%;}
+.bus_order_coce ul li a{ width:33.333%;background-color:#fff; text-align:center;padding: 10px 0;float:left}
+.bus_order_coce ul li.a a{ color:#fff; background-color:#FB6156;}
+.bus_sort_coce{width: 96%;float: left;padding:0 2% 5px 2%;}
+.bus_sort_coce ul li a{ padding:3px 8px; margin:5px 10px 0 0; background-color:#fff; float:left}
+.bus_sort_coce ul li.a a{ color:#fff; background-color:#FB6156;}
+
+
+.mobanbus_view_bd .bus_viewtt{width:100%;background:url(../img/bus_bg.jpg) fixed; position: relative; color:#555; padding:10px 0 0 0;margin:0!important;float:left;}
+.mobanbus_view_bd .bus_viewtt .bus_indexbg_col{ position: absolute;top: 0px;left: 0px;width: 100%;height: 100%;overflow: hidden;}
+.mobanbus_view_bd .bus_viewtt .bus_indexbg_col.s01{background-color:#98322A;opacity: 0.6;}
+
+.mobanbus_view_bd .bus_viewtt .bus_vtt{ padding-left:60px;}
+.mobanbus_view_bd .bus_viewtt h2{width:100%; color:#fff; padding:3px 0 5px 0;font-size:1.7em;text-shadow:0px 0px 1px rgba(51,51,51,0.1);margin:0!important;}
+.mobanbus_view_bd .bus_viewtt .bus_hf{font-size:14px!important;width:100%;margin:0 0 5px 0;color:#ccc;line-height:20px;float:left;}
+.mobanbus_view_bd .bus_viewtt .bus_hf em{float:right;}
+.mobanbus_view_bd .bus_viewtt .bus_hf a{font-size:12px;color:#fff;}
+.mobanbus_view_bd .plc{width:100%;float:left;border-bottom:none!important;overflow:visible!important}
+.mobanbus_view_bd .bus_viewbd{width:100%; margin-bottom:10px;}
+.mobanbus_view_bd .bus_viewbd .bus_auther{margin:0 5px 0 5px;padding:5px 0;background-color:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd;float:left}
+.mobanbus_view_bd .bus_viewbd .avatar{position:absolute;top:6px;}
+.mobanbus_view_bd .bus_viewbd .avatar img{width:30px;height:30px;border-radius:50%;border:none!important;box-shadow:0px 2px 3px rgba(0,0,0,0.1);}
+.mobanbus_view_bd .bus_viewbd .authi{font-size:14px;padding-left:50px;}
+.mobanbus_view_bd .bus_viewbd .message{width:94%;line-height:1.7em;font-size:12.5pt; margin:0 3%;padding:5px 0 5px 0;color: #333;float:left}
+.mobanbus_view_bd .bus_viewbd .message img{max-width:100%!important}
+.mobanbus_view_bd .bus_viewbd .message iframe{max-width:100%!important; height:300px!important;}
+.mobanbus_view_bd .bus_viewbd .mobanbus_like{ width:100%; float:left; padding:10px 0; text-align:center}
+.mobanbus_view_bd .bus_viewbd .mobanbus_like .replyadd_a{ font-size:2em;}
+
+.mobanbus_view_bd .bus_viewbd .message .mbn img{ width:auto; margin-bottom:10px;}
+.mobanbus_view_bd .bus_viewbd .message .bm.mtn label{ display:block}
+.mobanbus_view_bd .bus_viewbd .message .bm.mtn .bm_c.pd5{ width:96%; background:#f2f2f2; border:1px solid #ddd; padding:10px 2%;border-radius:3px; float:left; margin-bottom:15px;}
+.mobanbus_view_bd .bus_viewbd .message .bm.mtn .txt_s{ width:50%;}
+.mobanbus_view_bd .bus_viewbd .message .bm.mtn .txt, .mobanbus_view_bd .bus_viewbd .message .bm.mtn .px{ display:block}
+.mobanbus_view_bd .bus_viewbd .message .bm.mtn .bus_btn{ background-color:#FB6156; border:none; width:30%; margin-top:15px; line-height:25px;}
+.mobanbus_view_bd .bus_viewbd .message .bm.ptn.pbn.xs1{ width:100%; float:left}
+.mobanbus_view_bd .bus_viewbd .message .bm.ptn.pbn.xs1 table{ width:100%; margin-bottom:15px;}
+.mobanbus_view_bd .bus_viewbd .message .bm.ptn.pbn.xs1 tr{ line-height:1.7em; border-bottom:1px solid #eee}
+.mobanbus_view_bd .bus_viewbd .message .typeoption table{width:100%;}
+.mobanbus_view_bd .bus_viewbd .message .typeoption tr{ line-height:1.7em}
+.mobanbus_view_bd .bus_viewbd ul.xl2 li{width:95%; padding-left:5%; line-height:22px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.mobanbus_view_bd .bus_viewbd ul.xl2{ padding:0 0 15px 0}
+
+.mobanbus_view_bd .bus_replybd.plc.cl{width:100%;border-bottom:1px solid #ddd!important;float:left}
+.mobanbus_view_bd .bus_replybd .bus_auther{width:96%;margin:10px 2% 0 2%;padding-top:5px;float:left}
+.mobanbus_view_bd .bus_replybd .avatar{position:absolute;top:17px;width:50px;height:50px;}
+.mobanbus_view_bd .bus_replybd .avatar img{width:50px;height:50px;border-radius:50%;border:none!important;box-shadow:0px 2px 3px rgba(0,0,0,0.1);}
+.mobanbus_view_bd .bus_replybd .authi{font-size:12px;padding-left:65px;}
+.mobanbus_view_bd .bus_replybd .mobanbus_like{ width:100%; padding-bottom:10px; text-align:right; float:left}
+.mobanbus_view_bd .bus_replybd .mobanbus_like .replyadd{ margin:0 8px 0 0; font-size:1em;}
+.mobanbus_view_bd .bus_replybd .authi .ml10{font-size:12px; font-weight:normal; border:1px solid #FB6156; color:#FB6156; padding:0 3px; border-radius:3px;}
+.mobanbus_view_bd .bus_replybd .message{line-height:1.7;font-size:11pt;padding:5px 10px 0 74px;float:left}
+.mobanbus_view_bd .bus_replybd .message img{max-width:80%}
+.mobanbus_view_bd .bus_replybd .fastpost .input{height:56px;margin-bottom:20px;}
+.mobanbus_view_bd .bus_replybd .fastpost .fastpost_btn.bus_btn{margin-bottom:20px;background-color:#FB6156;border-color:#FB6156;border:0px outset buttonface!important;text-align:center;height:30px;width:50%;line-height:30px;}
+.mobanbus_view_bd .bus_replybd.plc.cl.bbn{border-bottom:none!important}
+.mobanbus_view_bd .bus_share{ width:100%; padding-bottom:20px; float:left;}
+.mobanbus_view_bd .bus_share a.bus_btn{ display:block; width:35%; padding:5px 0!important;float:left;}
+.mobanbus_view_bd .bus_share .weiboshare{ margin:0 2% 0 13%; background-color:#FF3333;  float:left;}
+.mobanbus_view_bd .bus_share .wweixinshare{margin:0 13% 0 2%; background-color:#51C332;  float:right;}
+.mobanbus_view_bd #mcover {position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.7);display: none;z-index: 20000;}
+.mobanbus_view_bd #mcover img {position: fixed;right: 18px;top: 5px;width: 260px!important;height: 180px!important;z-index: 20001;}
+
+
+
+.mobanbus_view_bd .bus_next{width:100%;padding:0 0 15px 0;float:left;}
+.mobanbus_view_bd .bus_next a{font-size:1.4em;color:#A5A5A5;margin:0 10px;}
+.mobanbus_view_bd .bus_next i{font-weight:bold;margin:0 5px;}
+.mobanbus_view_bd .page{width:100%;margin-top:10px;float:left}
+.mobanbus_view_bd .fastpost{padding:0 0 10px 0}
+.mobanbus_view_bd .bbda{padding: 5px 10px; font-size:16px!important;}
+.mobanbus_view_bd .grey.quote{font-size:14px!important;}
+
+.mobanbus span.bus_tt{font-weight:bold;text-align:center;font-size:1.1em;width:100%;float:left;padding:15px 0 10px 0;}
+.bus_icolist{width: 100%; margin-bottom:15px; padding:15px 0 0 0;float:left}
+.icon-circle{background-color:#f82;}
+.icolist .icon{display:inline-block;float:left;-moz-box-sizing:border-box;box-sizing:border-box;width:25%;padding:0 0 15px 0;text-align:center;}
+.icolist .icon>a{margin:0 auto;border-radius:4em;text-align:center;}
+.icolist .icon>a::before{width:0px; display:none}
+.icolist .icon-circle{display:block;margin:auto;margin-bottom:1em;font-family:cate_icon;width:4em;height:4em;line-height:4em;font-size:1.1em;color:#fff;}
+.typeid1{background-color:#f82;}
+.typeid4{background-color:#62c4ea;}
+.typeid5{background-color:#f48c78;}
+.typeid3{background-color:#7788f;}
+.typeid0{background-color:#45d3bf;}
+.typeid6{background-color:#F2AA00;}
+.typeid7{background-color:#DD5555;}
+.typeid2{background-color:#77D4FC;}
+.topNews{width:92%;padding:10px 4% 15px 4%; margin-bottom: 15px; overflow:hidden;}
+.topNews b{display:block;width:100%;font-size:1.6em;padding:10px 0 0 0;height:30px;overflow:hidden;text-align:center;white-space:nowrap;text-overflow:ellipsis;margin:0 auto;font-family:'Microsoft YaHei','黑体';color:{HIGHLIGHTLINK}
+;}
+.topNews ul{width:100%;height:46px;overflow:hidden;}
+.topNews ul.ul2{height:57px;}
+.topNews li{width:50%;padding:3px 0 0 0;float:left;height:20px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:#555;_font-family:"simsun";}
+.topNews li a{width:90%;font-size:1.1em;float:left;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+
+
+.bus_item3{float:left;margin-bottom:15px}
+.bus_item3 dl{width:100%;float:left;background-color:#fff;overflow:hidden;}
+.bus_item3 dl dt{ width:31.333%; margin:15px 1%; float:left}
+.bus_item3 dl dt img{ width:100%; height:auto; float:left}
+.bus_item3 dl dt span{ width:90%; max-height: 35px; padding:0 5%; margin:5px 0 0 0; font-size:12px; border-radius:1px; background-color:#d8505c; display:block; color:#fff;line-height:17px; text-align:center;float:left}
+
+
+.bus_item6{float:left;margin-bottom:15px}
+.bus_item6 a{position: relative; display: block;overflow: hidden;background: #fff; width:42%; padding: 0 3%; margin: 0 2% 10px 0;height: 60px;text-align: left; float:left}
+.bus_item6 a em{ width:50%; margin-right:50%; padding-top: 15px;color: #333;font-weight: 400;text-align: left;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; float:left;}
+.bus_item6 a span{ width:50%; margin-right:50%;display: block;color: #bbb;font-size: 11px;padding: 2px 0 5px;text-align: left;white-space: nowrap;overflow: hidden;text-overflow: ellipsis; float:left;}
+.bus_item6 a img{ width:50px; height:50px; position:absolute; right:5px; top:5px;}
+
+
+.bus_forumguid{width:100%;padding:0;float:left;margin-bottom:15px}
+.bus_forumguid dl{width:100%;float:left;background-color:#fff;overflow:hidden;}
+.bus_forumguid dt{display:block;width:100%;height:auto;float:left;position:relative;margin-bottom:10px;}
+
+.bus_forumguid dt a span{ position:absolute; width:92%; padding:0 1%; margin:0 3% 0 3%;height:30px; line-height:30px; font-size:1.1em; color:#fff; text-align:center; bottom:0px; left:0px; background-color:rgba(0,0,0,0.5);white-space: nowrap;overflow: hidden;text-overflow: ellipsis; }
+.bus_forumguid dt a img{ width:100%;}
+
+.bus_forumguid dt a {display: block; width:94%;margin:10px 3% 0 3%; font-size:1.6em;color:#333;text-align:center;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.bus_forumguid dt p{display: block; border-bottom: 1px solid #ddd; width:94%;margin:0 3% 0 3%;max-height:50px; line-height: 25px;font-size: 1.1em; overflow: hidden;color: #666;text-indent: 1em; padding-bottom: 10px;}
+
+.bus_forumguid dd{width:96%;margin: 0 2%; height:67px;border-bottom:1px solid #ddd;float:left;margin-bottom:-1px}
+.bus_forumguid dd a{display:block;color:#333;width:96%;height:55px;margin:6px 2%;float:left;position:relative;overflow:hidden}
+.bus_forumguid dd a span{display:block;line-height:25px;padding-right:65px;font-size:1.3em;}
+.bus_forumguid dd a img{position:absolute;right:0px;top:0px;width:55px;height:55px;}
+
+.bus_forumguid #tag1con{}
+.bus_forumguid #tag1con span.bus_tt i{cursor:pointer;color:#696969;margin-right:10px;}
+.bus_forumguid #tag1con span.bus_tt i.show{color:#FB6156;}
+.bus_forumguid #tag1con ul{display:none;width:100%;background-color:#fff;border-radius:5px 5px 5px 5px;box-shadow:0px 0px 3px rgba(0,0,0,0.2);padding:0;overflow:hidden;}
+.bus_forumguid #tag1con ul li{display:block;width:100%;margin-bottom:-1px;overflow:hidden;font-size:inherit;font-weight:400;position:relative;float:left;}
+.bus_forumguid #tag1con ul li a{border-bottom:1px solid #ddd;width:96%;padding:6px 2%;}
+.bus_forumguid #tag1con ul.show{display:block;}
+
+.bus_list_bd{position:relative;}
+.bus_list_bd_pic{position:absolute;width:55px;height:55px;right:0px;top:0px;text-align:center;overflow:hidden;}
+.bus_list_bd_pic>img{width:55px;height:55px;border:0}
+.bus_list_bd .bus_list_bd_l{margin-right:65px;height:55px;overflow:hidden;line-height:23px}
+.bus_list_bd .brand{height:55px;line-height:28px;font-size:1.3em;color:#333;text-overflow:ellipsis;overflow:hidden;}
+.bus_list_bd .title{width:100%;font-size:1em;height:35px;margin-bottom:10px;line-height:20px;color:#666;text-overflow:ellipsis;overflow:hidden;}
+.bus_list_bd .text{font-size:1em;height:20px;color:#999;}
+.bus_forumguid #tag1con ul li a.fst{display:block;width:100%;padding:0;float:left;margin-bottom:10px;overflow:hidden;position:relative;}
+.bus_forumguid #tag1con ul li a.fst span{position:absolute;width:100%;height:30px;line-height:30px;color:#fff;text-align:center;bottom:0px;left:0px;background-color:rgba(0,0,0,0.5);}
+.bus_forumguid #tag1con ul li a.fst img{width:100%;border-radius:5px 5px 0 0}
+.bus_viewthread_l #moderate li{width:100%;padding:0 0 10px 0;margin-bottom:15px;list-style:none}
+.bus_viewthread_l #moderate li img.pic{width:800px;height:250px;}
+.bus_viewthread_l #moderate li h3.xw0{padding:0px 10px 10px 10px;margin:15px 20px;text-align:left}
+.bus_viewthread_l #moderate li h3.xw0 a{font-size:22px;color:#747474;}
+.mobanbus .bus_wtftt{font-weight:bold;text-align:center;font-size:1.1em;width:100%;float:left;padding:10px 0;}
+.bus_bottomnav .bus_rpos{ width:100%; padding-top:5px; background-color:#eee; float:left}
+.bus_bottomnav .bus_rpos .fastpost .input{ width:68%; padding:0 5xp;  margin:0 3%; float:left}
+.bus_bottomnav .bus_rpos .fastpost .fastpost_btn.bus_btn{margin-bottom:10px;background-color:#FB6156;border-color:#FB6156;border:0px outset buttonface!important;text-align:center;height:30px;line-height:30px;}
+
+.bus_waterfall .bus_wtf{position:relative;min-height:500px;}
+.bus_waterfall .bus_wtf .item{margin:0 0 20px 0;border-radius:2px;padding:0;width:145px;box-shadow:0 1px 6px rgba(0,0,0,.25);background:#fff;}
+.bus_waterfall .bus_wtf .item .bus_wtf_pic img{width:145px;min-height:50px;background-color:#FB6156}
+.bus_waterfall .bus_wtf .bus_wtf_pic{padding:0px;border:none;background-color:#E0E0E0;}
+.bus_waterfall .bus_wtf h3.bus_wtf_tt{padding:10px;background-color:#fff;}
+.bus_waterfall .bus_wtf a{font-size:1em;color:#777}
+.bus_waterfall .bus_wtf .bus_wtf_tt{overflow:hidden;padding-bottom:0;max-height:600px;}
+.bus_waterfall .bus_wtf .auth{font-size:1em;color:#777;padding:5px;border-top:1px solid #f2f2f2;background:#FAFAFA;}
+.bus_waterfall .bus_wtf .auth img{display:inline-block;width:100%;margin:0px;}
+.bus_waterfall .bus_wtf .icon_tu, .bus_waterfall .bus_wtf .icon_top{position:absolute;top:0px;left:0}
+.bus_newslist .clt .icon_tu, .bus_newslist .clt .icon_top{position:absolute;top:0px;left:0}
+
+.bus_wtf_page{height:36px;overflow:hidden;margin:15px 0 15px 0;text-align:center;border-radius:5px}
+.bus_wtf_page a{display:block;width:90%;margin:0 5%;line-height:36px;border:1px solid #ddd;text-align:center;color:#8e8e8e;background-color:#cdcdcd}
+.bus_wtf_page a:hover{background-color:#ddd}
+.bus_newslist{width:96%; padding:0 2%; margin-top:10px; margin-bottom:15px;}
+.bus_newslist.pd10{width:96%;float:left;padding:0 2% 20px 2%;}
+.bus_newslist .clt{width:100%;background-color:#fff; float:left;list-style:none;margin-bottom:10px; position:relative}
+.bus_newslist .clt img.bus_newslist_pic{display:block;max-width:90px!important;max-height:90px!important;float:left;margin:2px 15px 2px 0}
+.bus_newslist .clt a{ padding:8px;display:block;position:relative;overflow:hidden}
+.bus_newslist .clt .bus_newslist_txt{float:lefet;margin-top:5px;position:relative;overflow:hidden}
+.bus_newslist .clt .bus_newslist_txt h2{max-height:60px;font-weight: normal; margin-bottom:5px;font-size:1.6em; line-height:30px;float:none;overflow:hidden;}
+.bus_newslist .clt .bus_newslist_txt p{height:40px;color:#999;font-size:1.1em;float:none;overflow:hidden}
+.bus_newslist .clt .bus_newslist_txt p.bus_forumnam{height:25px!important;}
+.bus_newslist .clt .bus_newslist_txt span{font-size:1em;color:#999;}
+.bus_newslist .clt .bus_newslist_info { width:100%; float:left; padding:8px 0; background-color:#EFF3F5}
+.bus_newslist .clt .bus_newslist_info span{ text-align:center; width:33.33%;}
+
+.bus_newslist .bus_cat{width:100%;float:left;border-bottom:1px solid #ddd;}
+.bus_newslist .bus_cat li{float:left;padding:5px 15px 5px 0;}
+.bus_newsview{background-color:#fff; width:96%; padding:0 2%;  margin-top:10px;}
+.bus_newsview .bus_not h1{margin:8px 0;font-size:1.4em;}
+.bus_newsview .bus_not p,.bus_newsview .notb p a{color:#999}
+.bus_newsview .bus_not .bus_smary{font-size:11pt;padding:10px 0px;color:#999;margin:10px 0;border-bottom:1px solid #ddd;border-top:1px solid #ddd;}
+.bus_newsview .bus_not .bus_smary strong{color:#FB6156}
+.bus_newsview .bus_mess{line-height:22px;font-size:12.5pt;}
+.bus_newsview .bus_mess img{max-width:100%}
+.bus_newsview .bus_mess iframe{max-width:100%!important; height:300px!important;}
+.bus_newsview .bus_share{width:90%;padding:5px 5% 0 5%;border-radius:5px;margin:10px 0;float:left;background-color:#eee;}
+.bus_newsview .bus_share h3,.bus_newsview .bus_share .bdsharebuttonbox{line-height:28px;padding-right:10px;float:left}
+.bus_newsview .bus_share .bdsharebuttonbox{width:150px;}
+.bus_newsview .bus_vnext em{width:100%;line-height:25px;float:left;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;}
+.bus_newsview .bus_vnext em{font-size:11pt;}
+.bus_newsview .bus_vrelate{float:left;padding:5px 0;border-bottom:1px solid #ddd;border-top:1px solid #ddd;}
+.bus_newsview .bus_vrelate li{list-style:noen;line-height:25px;width:100%;float:left;}
+.bus_newsview .bus_vrelate li a{font-size:11pt}
+.bus_newsview .bus_vcomment{list-style:noen;line-height:25px;width:100%;float:left;}
+.bus_newsview .bus_vcomment input{height:56px; margin-bottom:15px;text-indent:7px;width:100%}
+.bus_newsview .bus_vcomment .bus_btn{margin:20px 0;background-color:#FB6156;border-color:#FB6156;border:0px outset buttonface!important;text-align:center;height:30px;width:50%;line-height:30px;}
+.bus_newsview .bus_vcomment .celi{position:relative;width:100%;color:#999;padding:10px 0;border-bottom:1px solid #ddd;}
+.bus_newsview .bus_vcomment .celi .avatar{position:absolute;left:0px;top:10px;}
+.bus_newsview .bus_vcomment .celi .avatar img{width:35px;height:35px;border-radius:50%;}
+.bus_newsview .bus_vcomment .bus_vuser,.bus_newsview .bus_vcomment .bus_vtrim,.bus_newsview .bus_vcomment .celi .bus_vmess{font-size:11pt;padding-left:50px;}
+.bus_newsview .bus_vcomment .bus_viewall a{display:block;text-align:center;font-size:15px;height:34px;line-height:34px;margin:10px;border-radius:2px;border:1px solid #e0e0e0;background-color:#f5f5f5;}
+.bus_newsview .bbda{margin-bottom:10px}
+.pgbtn{margin:5px 0 10px;}
+.pgbtn a{display:block;height:40px;line-height:40px;letter-spacing:5px;text-align:center;border:1px solid #DCDCDC;background:#F5F5F5 url(../img/bg_pgbtn.png) repeat-x 0 0;font-size:14px;outline:none;border-radius:5px;box-shadow:0 1px 0 #F5F5F5;}
+.pgbtn a:hover{border-color:#BABABA;text-decoration:none;}
+.pgbtn a:active{background:#EEE;border-color:#D0D0D0;box-shadow:none}
+.pg{padding-right:15px;height:35px;float:right;}
+.pg a,.pgb a,.pg label,.pg strong{border-radius:5px;margin-left:5px!important;}
+#pgt .pg,#pgt .pgb{margin-top:0;}
+.pg a,.pg strong,.pgb a,.pg label{border:none;margin-left:0}
+.pg strong{background-color:#2C7E8D !important;color:white;display:block;float:left;padding:1px 10px;margin-left:5px;font-weight:normal}
+.pg a,.pgb a,.pg label{display:block;float:left;background-color:#EEEEEE;padding:1px 10px;margin-left:5px;color:#333333}
+.pg a.nxt{float:left;background-image:none;display:block}
+.pg label{display:none}
+.pg a:hover,.pgb a:hover{color:white;background-color:#2C7E8D;border:none}
+.pg a.prev{background-repeat:no-repeat}
+.pgb a{padding-left:25px}
+#autopbn{display:none !important}
+.bus_login{width:100%; float:left;background-image:url(../img/login_bg7.jpg)!important; background-repeat:repeat-y;background-size:100%;}
+.mobanbus .loginbox{margin-top:20px;padding:25px!important;}
+.mobanbus .login_from{background:none!important;border:none!important;}
+.mobanbus .login_from li{color:#f2f2f2;width:100%;padding:0px!important;margin-bottom:10px;border:none!important;}
+.mobanbus .sec_code{padding-left:0px !important;padding-top:0px !important;}
+.mobanbus .reg_link a{color:#f2f2f2}
+.bus_login_logo{width:100%;padding-top:40px;height:80px;text-align:center;}
+.bus_login_logo .ctain{width:80px;height:80px;margin:0 auto 0;box-shadow:0 0 1px rgba(0,0,0,0.3);background-color:#FB6156;border-radius:50%;}
+.bus_login_logo .ctain .icon-user{font-size:4em;color:#fff;line-height:80px;}
+.bus_login_logo .txt{color:#fff;font-size:1.4em;line-height:30px;}
+.bus_login_input{color:#f2f2f2;background-color:rgba(0,0,0,0.3)!important;border-color:rgba(0,0,0,0.3);height:35px;width:97%;padding:2px 1.5%; height:30px!important}
+.bus_reply_input{color:#333; height:35px;width:97%;padding:2px 1.5%; height:30px!important}
+.bus_login_btn{width:100%;height:40px;color:#fff;border-radius:5px;background-color:#FB6156;border-color:#FB6156;border:0px outset buttonface!important;text-align:center;line-height:40px;}
+.bus_search{background-color:#fff; margin:10px 2%; border-radius:3px;min-height:50%;}
+.bus_search input{height:35px!important;padding:2px 0!important;}
+.mobanbus_bd .searchform{}
+.mobanbus_bd .searchform .search .bus_btn{height:40px;background-color:#FB6156;border-color:#FB6156;border:0px outset buttonface!important;text-align:center;line-height:30px;}
+.mobanbus_bd .threadlist .thread_tit{border-bottom:none!important}
+.mobanbus_bd .threadlist li{border-top:1px solid #D9D8D8!important;border-bottom:none!important}
+
+
+/* mobanbus-space */
+.bus_userinfo{ width:100%; overflow:hidden}
+.bus_userinfo.pt30{ padding-top:30px;}
+.bus_spacebox{background-color:#fff; padding-top:10px; padding-bottom:10px; -moz-box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);-webkit-box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);}
+
+.bus_userinfo .user_cover { display: block; height:277px; background: url(../img/bus_alum_userinfo.jpg) repeat 0 55px; background-size: 100%; position: relative;}
+.bus_userinfo .user_info {color: #999;width: 100%; float: left;text-align:center; margin:0; }
+.bus_userinfo .user_avatar { text-align: center; margin: 0 auto; position:relative; top:60px; }
+.bus_userinfo .user_avatar img { border-radius: 50%;width: 80px!important;height: 80px!important; border:1px solid #555; box-shadow: 0 0 5px rgba(0, 0, 0, 0.9); }
+.bus_userinfo .user_avatar .name { color:#fff; display: inline-block; font-weight: normal;}
+.bus_userinfo .user_avatar .mobanbus_f { margin:0 5px;text-align:center}
+.bus_userinfo .user_avatar .mobanbus_f a { color:#fff; padding:5px 15px; background-color:#FB6156; border-radius:3px;}
+.bus_userinfo .user_avatar .avatar_m {box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);}
+.bus_userinfo .user_sign { color: #999; font-size: 14px; height: 26px; line-height: 26px; margin-left: 15px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+
+.bus_userinfo .user_box { margin: 45px 10px 10px; border: none; background: none; border-radius: 0; }
+.bus_userinfo .user_box li { float: left; color: #999; padding: 6px 0; width: 50%; line-height: 26px; border-color: #eee; font-weight: normal; }
+.bus_userinfo .user_box li em { color: #333; padding: 5px; }
+.bus_userinfo .user_box li.line { width: 100%; }
+
+.bus_userinfo .user_list { width:100%; float:left; padding: 0;}
+.bus_userinfo .user_list .tb.cl{ padding:0}
+.bus_userinfo .user_list li { float: left; text-align: center; width:25%; height: 30px; line-height: 30px; position: relative;}
+.bus_userinfo .user_list li.b {width:50%;}
+.bus_userinfo .user_list li a{ color:#fff}
+.bus_userinfo .user_list li.a a{ color:#fff}
+.bus_userinfo .user_list li a { display: block; font-size: 16px; padding:0; }
+.bus_userinfo .user_list.his li { width: 33.3%; }
+.bus_userinfo .user_list .new { display: inline-block; height: 8px; width: 8px; margin: 5px 0; position: absolute; top: 0; background: #ff5460; border-radius: 15px; border: 2px solid #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+.bus_userinfo .creadit_list { width:100%; float:left; margin-top:10px;}
+.bus_userinfo .creadit_list .tb.cl{ padding:0}
+.bus_userinfo .creadit_list li { float: left; text-align: center; width:25%; height: 30px; line-height: 30px; position: relative; border-bottom: 1px solid #eee;}
+.bus_userinfo .creadit_list li.a a{ color:#FB6156}
+.bus_userinfo .creadit_list li a { display: block; font-size: 16px; padding:0; }
+
+
+
+.bus_userinfo .dialog_gray, .dialog_green { min-width: 88px; max-width: 270px; margin: 0 12px 20px; padding: 5px 9px; border-radius: 2px; position: relative; background: #ebfbe3; border: 1px solid #dff0d8; }
+.bus_profile, .bus_listbox{width:90%; padding:0 5%; float:left; margin:10px 0 15px 0;background-color:#fff; -moz-box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);-webkit-box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);box-shadow:0px 1px 1px 0px rgba(0,0,0,0.1);}
+
+#friend_ul li{ width:100%; margin-bottom:15px; float:left}
+#friend_ul li .mobanbuvst{ width:50px; height:50px; margin-right:8px; float:left}
+#friend_ul li .mobanbuvst img{ width:50px; height:50px;}
+.bus_friend .bus_post_gray{margin:20px 10px 20px 0; background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:30%;line-height:30px;}
+.bus_friend  a.bus_btn{ font-size:26px; line-height:26px; height:26px;display:block;padding:2px 10px!important;box-shadow:0 0 1px rgba(0,0,0,0.3);color:#FFF!important;border-radius:5px;text-align:center;float:left}
+.bus_friend  .bus_friend_adss{ line-height:25px;}
+.bus_friend  .bus_friend_adss .avt{ height:60px;text-align:center}
+.bus_friend  .bus_friend_adss tr{ line-height:30px}
+
+.bus_profile span.bus_tt, .bus_listbox span.bus_tt{ border-bottom:1px solid #eee; margin-bottom:15px;}
+.bus_profile ul{ padding-bottom:10px; border-bottom:1px dashed #ddd}
+.bus_profile ul li{ font-size:14px!important; text-align:right; line-height:27px;}
+.bus_profile ul li em{ float:left; padding-right:10px}
+.bus_spceheader { height:45px; line-height:45px; background-color:#FB6156}
+.bus_spceheader .bus_nav a{ padding:0 10px; height:45px; line-height:47px; color:#fff; font-size:26px;}
+.mobanbus .formdialog{background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+.pmbox{ margin-top:10px;}
+.pmbox li{ background-color:#fff; height:auto!important; margin-bottom:10px; border-bottom:none; }
+.pmbox .bus_post_gray{margin:20px 0; background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+
+.bus_credit{ display:block; font-size:14px; width:90%; padding:10px 5%; float:left;}
+.bus_credit table{font-size:14px;}
+.bus_credit table tr{ border-top:1px dashed #ddd}
+.bus_credit table tr td, .bus_credit table tr th{ padding:10px 0;}
+.bus_credit li{ font-size:14px!important; text-align:right; line-height:27px;}
+.bus_credit li em{ float:left; padding-right:10px}
+.bus_credit .tbmu .a{ color:#FB6156}
+.bus_credit .post_msg_btn{background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+
+.dialog_white{max-width:60%;margin: 0 12px 20px;padding:12px 15px;border-radius: 2px;position: relative;background: #f9f9f9;border: 1px solid #ddd;}
+.dialog_white .dialog_c{line-height:22px;margin: 0 0 20px 0;padding: 5px 9px;border-radius: 2px;position: relative;background: #f9f9f9;}
+.dialog_white .date{position: absolute;right: 0;margin-top: 15px;}
+.dialog_white .dialog_c::after, .dialog_white .dialog_c::before{ color:#f9f9f9;background-color: #f9f9f9;position: absolute;top:0px;right: -20px;border: 1px solid #ddd;border-width: 1px 1px 0 0;width: 8px;height: 8px;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+
+.dialog_green{ max-width:60%;margin: 0 12px 20px;padding:12px 15px;border-radius: 2px;position: relative;}
+.dialog_green .dialog_c{ line-height:22px; width:auto;margin: 0 0 20px 0;padding: 5px 9px;border-radius: 2px;position: relative;background: #ebfbe3;}
+.dialog_green .date{position: absolute;left: 0;margin-top: 15px;}
+.dialog_green .dialog_c::after, .dialog_green .dialog_c::before{color:#ebfbe3; background-color:#ebfbe3; position: absolute;top:-2px;left:-20px;border: 1px solid #dff0d8;border-width: 0 0 1px 1px;width: 8px;height: 8px;-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);}
+.bus_post_msg .post_msg_btn{background-color:#cbcbcb; border-color:#cbcbcb;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+.bus_post_msg .bus_btn_blue{background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+
+/* mobanbus index slider */
+.mobanbus_slider { width:100%; background-color:#000;position: relative;text-align: center;line-height: 0px;margin-right: auto;margin-left: auto;}
+.mobanbus_slider ul{border: 0;margin: 0;padding: 0;}
+.mobanbus_slider .slide {position:relative; max-height:300px; overflow:hidden}
+.mobanbus_slider .caption {padding:13px 16px 12px; position:absolute; left:0px; right:0px; bottom:0px; background:url(../img/black.png); text-align:left;}
+.mobanbus_slider .caption p {padding-bottom:0px; font-size:11px; color:#dedede; text-shadow:0px -1px #000000; line-height:17px;}
+.mobanbus_slider .caption p.title {padding-bottom:6px; font-size:15px; color:#ffffff; font-weight:bold; line-height:normal;}
+.block_home_post_feature {width:300px;}
+.block_home_post_feature p {padding-bottom:0px;}
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none;-webkit-backface-visibility: hidden;list-style-type: none;}
+.flexslider .slides img {width: 100%!important; height:auto!important; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+.mobanbus_col_2{ width:96%; margin:15px 2% 0 2%; float:left}
+.mobanbus_col_2 .col_tiem{ width:48%; margin:0 1%;float:left}
+.col_tiem img{ width:100%;float:left}
+
+/* mobanbus alert */
+.mobanbus .dialogbox .tip{width:80%!important; background:#fff!important;height:auto!important; border:none!important; overflow:hidden}
+.mobanbus .dialogbox .tip dt{ height:auto!important}
+.mobanbus .dialogbox .tip dd{ border-top:none!important; padding-bottom:20px!important;}
+.mobanbus .dialogbox .tip input{height:40px; color:#fff; border-radius:5px;background:#FB6156!important; border-color:#FB6156;border:0px outset buttonface!important; text-align:center;line-height:40px;}
+.mobanbus .dialogbox .tip input.button2{width: 90%;}
+.mobanbus .dialogbox .tip a{display:block;width:100%!important;height:40px; line-height:40px;margin:0!important}
+.mobanbus .jump_c{ height:100%; width:90%!important; color:#fff; background-color:#FB6156; text-align:center; padding:0px 5%!important;}
+.mobanbus .jump_c a{ color:#fff; border-bottom:1px solid #fff}
+.mobanbus .jump_c p.one{padding-top:200px!important}
+
+.mobanbus .busshow{width:100%!important; background:#fff; float:left}
+.mobanbus .busshow .tip{width:100%!important;height:auto!important; text-align:left; margin:10% 0 20% 0; background:#fff!important; border:none}
+.mobanbus .busshow .tip dt{ line-height:30px; height:auto!important}
+.mobanbus .busshow .tip dd{ border-top:none!important}
+.mobanbus .busshow .tip input{width:90%; margin:0 5%; height:40px; color:#fff; border-radius:5px;background:#FB6156!important; border-color:#FB6156;border:0px outset buttonface!important; text-align:center;line-height:40px;}
+.mobanbus .busshow .tip a{ display:block;width:100%!important;text-align:center; height:40px; line-height:40px; margin:0!important}
+.mobanbus .busshow .tip textarea{height:35px; line-height:28px; width:97%; padding:2px 1.5%;}
+
+.mobanbus .bus_nav .icon-circle, .mobanbus .bus_userinfo .icon-circle{ font-size:10px;color:#FF0000; background:none; position:absolute; top:5px; right:0px;}
+.bus_homenav{ width:100%; background-color:rgba(0,0,0,0.5); float:left; position: absolute; top:237px;padding-top:5px; padding-bottom:5px;box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);}
+.bus_homenav .bus_path a, .bus_homenav .bus_path{ color:#fff}
+
+.bus_post_slt{width:94%; padding:0 3%;}
+.bus_post_slt .pbnv { float: left; white-space: nowrap; overflow: hidden; width: 400px; padding: 7px 0; }
+.bus_post_slt .pbl { overflow: hidden; border-radius:5px; margin:10px 0 20px 0; width:100%; border:solid; border-color:#ddd; border-width: 1px 1px 1px 0; background:#fff; }
+.bus_post_slt .pbl li { float: left; overflow-x: hidden; overflow-y: auto; padding: 5px 1.5%; width:30%; height: 300px; border-left: 1px solid #CCC; }
+.bus_post_slt .pbl p { height:30px; line-height: 30px; }
+.bus_post_slt .pbl a { display: block; white-space: nowrap; overflow: hidden; padding: 0 4px; text-decoration: none; color: {HIGHLIGHTLINK}; border: solid {WRAPBG}; border-width: 1px 0; }
+.bus_post_slt .pbl a:hover { text-decoration: none; background-color: #F3F3F3; }
+.bus_post_slt .pbl .highlightlink { color: #08C; }
+.bus_post_slt .pbls a, .pbls a:hover { background-color: #EEE; color: {MIDTEXT}; font-weight: 700; }
+.bus_post_slt .pbsb { background: url({IMGDIR}/arrow.gif) right -33px no-repeat; }
+.bus_post_slt .bus_post_green{margin-bottom:20px; background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+.bus_post_slt .bus_post_gray{margin-bottom:20px; background-color:#cbcbcb; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+
+.bus_post_from {background-color: #fff;border-radius: 3px; width: 94%; padding:10px 3%;margin-bottom: 15px; float: left;}
+.bus_post_from li{border: none; padding:15px 0;}
+.bus_post_from input{ width:98%; padding:0 1%;}
+.bus_post_from textarea{ width:98%; padding:0 1%; height:120px;}
+.bus_post_from .bus_btn_blue{margin-bottom:20px; background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+.bus_post_from .bus_btn_grey{margin-bottom:20px; background-color:#FB6156; border-color:#FB6156;border:0px outset buttonface!important; text-align:center; height:30px; width:50%;line-height:30px;}
+
+.error_text{ display:none}
+
+
+/* mobanbus-group */
+.bus_group { width:100%; float:left; margin-bottom:15px;font-size:1.3em;}
+.bus_group .busda{ width:100%; float:left; margin-bottom:15px;}
+.bus_group .pbn.bus_w100{ display:block; float:left; line-height:25px; padding:10px 0; border-top:1px solid #ddd}
+.bus_group dd.pbm.bus_w100{display:block; float:left; line-height:35px;}
+.bus_group dd.pbm.bus_w100 a{ color:#FB6156; padding-left:5%}
+.bus_group .pbn.bus_w100 .xs2{ width:95%; padding-left:5%; float:left;}
+.bus_group .pbn.bus_w100 .xi2{ width:95%; padding-left:5%; overflow:hidden; float:right; font-size:0.8em;}
+.bus_group .bus_w100 .top1{line-height:40px; border-top:1px solid #ddd;padding:0 10px;}
+.bus_group .group_create_btn{ margin:15px 0;width:100%; background-color:#FB6156; line-height:35px; border: none;color:#fff;}
+.bus_group .buscreate.bus_spacebox th{width:100%; float:left;line-height:30px;}
+.bus_group .buscreate.bus_spacebox tr{ width:100%; float:left; margin-bottom:15px;}
+.bus_group .buscreate.bus_spacebox .tip{ display:none}
+
+
+/* mobanbus-alum */
+.bus_alum_userinfo{ width:100%; padding:20px 0 10px 0;background: url(../img/bus_alum_userinfo.jpg) no-repeat 0 0; background-size:100%; float:left; text-align:center}
+.bus_alum_userinfo .avtm_logo img{ width:50px; border-radius:25px;}
+.bus_alum_userinfo a{ color:#fff; text-shadow:0 0 2px rgba(0,0,0,0.5)}
+.bus_alum { width:100%; float:left; padding:15px 0;font-size:1.3em;}
+.bus_alum .emp{ width:100%; text-align:center; float:left;}
+.bus_alum_list { width:100%; float:left; margin-bottom:15px;}
+.bus_alum_list li.bus_alum_fm{ width:46%; overflow:hidden; float:left; margin:5px 2%;}
+.bus_alum_list li.bus_alum_fm .c{ border:1px solid #eee; height:120px; overflow:hidden;}
+.bus_alum_list li.bus_alum_fm .ptn{ margin-top:5px;overflow:hidden;}
+.bus_alum_list li.bus_alum_fm img{ width:100%;}
+.bus_alum .up_alum{ display:block; border:none; float:none; margin:0 auto 20px; width:120px; background-color:#FB6156}
+.bus_alum .up_alum a{ display:block; color:#fff; width:100%;}
+.bus_alum a.bus_alum_n, .bus_alum a.bus_alum_p{ display:block;background-color:#FB6156; color:#fff; float:left}
+.bus_alum a.bus_alum_n{width:30%; margin:0 10% 20px 2%}
+.bus_alum a.bus_alum_p{ width:30%; margin:0 2% 20px 10%}
+.bus_alum .bus_alum_pic{ width:100%; float:left; text-align:center}
+.bus_alum .bus_alum_pic .c img{ max-width:100%;}
+.bus_alum .reply_alum{width:95%;height:56px; line-height:56px; text-indent: 7px;margin-top: 2px;border: 1px solid #D9D8D8;}
+.bus_alum .reply_alum_btn{margin:10px 0 20px 0;background-color: #FB6156;border-color: #FB6156;border: 0px outset buttonface!important;text-align: center;height: 30px;width:200px;line-height: 30px;}
+.bus_alum .bus_alum_comment{ width:100%; float:left;}
+.bus_alum .bus_alum_comment .bus_replybd{ width:100%; margin-bottom:15px; float:left; border-bottom:1px solid #ddd}
+.bus_alum .bus_alum_comment .bus_replybd .bus_alum_avt{ float:left}
+.bus_alum .bus_alum_comment .bus_replybd .bus_alum_info{ padding-left:40px;}
+.bus_alum .bus_alum_comment .bus_replybd .bus_alum_msg{ width:90%; float:left; padding:10px 5%; float:left}
+.bus_alum .bus_alum_comment .bus_replybd .bus_alum_avt img{width: 30px;height: 30px;border-radius: 50%;border: none!important;box-shadow: 0px 2px 3px rgba(0,0,0,0.1);}
+.bus_alum .bus_alum_comment .bus_replybd .bus_alum_avt img{width: 30px;height: 30px;border-radius: 50%;border: none!important;box-shadow: 0px 2px 3px rgba(0,0,0,0.1);}
+.bus_alum .swfupload{ background-color:#FB6156}
+
+
+.bus_group .pbn.bus_w100{ display:block; float:left; line-height:25px; padding:10px 0; border-top:1px solid #ddd}
+.bus_group dd.pbm.bus_w100{display:block; float:left; line-height:35px;}
+.bus_group dd.pbm.bus_w100 a{ color:#FB6156; padding-left:5%}
+.bus_group .pbn.bus_w100 .xs2{ width:95%; padding-left:5%; float:left;}
+.bus_group .pbn.bus_w100 .xi2{ width:95%; padding-left:5%; overflow:hidden; float:right; font-size:0.8em;}
+.bus_group .bus_w100 .top1{line-height:40px; border-top:1px solid #ddd;padding:0 10px;}
+.bus_group .group_create_btn{ margin:15px 0;width:100%; background-color:#FB6156; line-height:35px; border: none;color:#fff;}
+.bus_group .buscreate.bus_spacebox th{width:100%; float:left;line-height:30px;}
+.bus_group .buscreate.bus_spacebox tr{ width:100%; float:left; margin-bottom:15px;}
+.bus_group .buscreate.bus_spacebox .tip{ display:none}
+
+
+/* mobanbus-footer */
+.footer{width: 100%;background:#fff;border-top: 1px solid #eee;padding:10px 0;float:left}
+.footer .bus_foot_nav{height: 30px; border-right:none; margin:10px auto; text-align:center}
+.footer .bus_foot_nav a{background: #eee; color:#999; display: block;border: 1px solid #ddd; line-height: 30px;text-align: center; display:inline; padding:5px 10px!important; margin:0 0 0 -5px!important;}
+
+
+.bus_bottomnav{width: 100%;z-index: 9999; bottom: 0px; height:50px; background-color:#fff;position: fixed;border-top: 1px solid #f9f9f9; overflow:hidden}
+.bus_bottomnav .bus_ft_ico{ float:left; text-align:center;}
+.bus_bottomnav .col_5{ width:20%;}
+.bus_bottomnav .col_3{ width:33.333%;}
+.bus_bottomnav .bus_ft_c{background-color:#FB6156;}
+.bus_bottomnav .bus_ft_c a{color:#fff!important; height:34px;}
+.bus_bottomnav .bus_ft_c a i{line-height: 38px;height: 34px;font-size: 2em!important;}
+.bus_bottomnav .bus_ft_c2{background-color:#FB6156;}
+.bus_bottomnav .bus_ft_c2 a{color:#fff!important;}
+.bus_bottomnav .bus_ft_c2 a i{}
+.bus_bottomnav .bus_ft_ico a { color:#777; width:100%; float:left; padding:8px 0px}
+.bus_bottomnav .bus_ft_ico a i{ font-size:1.4em}
+.bus_bottomnav .bus_ft_ico a span{ display:block; font-size:0.9em; width:100%;}
+
+
+
+.mobanbus .dialogbox{}
+.mobanbus .dialogbox .button{font-size: 14px; background:#fff; border: none;box-shadow: none;margin:0 1px 0 2px; color: #333;}
+
+.mobanbus_item{ width:100%; float:left; position:relative}
+#infscr-loading {bottom: -20px; position: absolute;text-align: center;height: 20px;line-height: 20px;z-index: 100;width:100%;}

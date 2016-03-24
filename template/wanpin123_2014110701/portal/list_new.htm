@@ -1,0 +1,118 @@
+<!--{subtemplate common/iheader}-->
+<!--[name]myshow模板公司新闻[/name]-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<style id="diy_style" type="text/css"></style>
+<link rel="stylesheet" type="text/css" href="template/wanpin123_2014110701/style/css/listview.css" />
+
+<style id="diy_style" type="text/css"></style>
+<style>.pg strong, .pg a:hover {
+    background-color:#5A5A5B;
+    color: #FFFFFF;
+}
+
+.pgs {
+    clear: both;
+    font-family: Arial;
+    height: 28px;
+    padding: 20px 0 10px;
+    text-align: center;
+}
+
+</style>
+</div>
+<div id="banner">
+			<div class="banner_bg">
+				<img src="template/wanpin123_2014110701/style/images/newbanner2bg.jpg" />
+			</div>
+			<div class="headercommon">
+				<div class="banner_title"><img src="template/wanpin123_2014110701/style/images/newbanner2title.png" /></div>
+				<div class="banner_person"><img src="template/wanpin123_2014110701/style/images/newbanner2person.png" /></div>
+			</div>
+		</div>
+<div class="wp">
+	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
+</div>
+		<div id="content">
+			<div class="headercommon">
+				<div class="information" style="height: 70px;">
+					<div class="z information_title"><i class="news_i"></i>$cat[catname]</div>                    
+                    <div class="z crumbs">您的位置<span>></span><a href="./" title="{lang homepage}">首页</a><span>></span><!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><span>></span><!--{/loop}--><a>$cat[catname]</a></div>
+                    <div class="postnew" style="float:right;"><a class="post_btn" href="portal.php?mod=portalcp&ac=article&catid=$cat[catid]">发表文章
+</a></div>
+					<div class="clear"></div>
+				</div>
+				<div id="left" class="z">
+					<div id="menu">
+						<ul>
+						
+					
+				<!--{if $cat[others]}-->
+				<!--{loop $cat[others] $value}-->
+					<li><a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a></li>
+					<!--{/loop}-->
+				<!--{/if}-->
+				<!--{if $cat[subs]}-->
+				<!--{eval $i = 1;}-->
+				<!--{loop $cat[subs] $value}-->
+				<li><a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a></li><!--{eval $i--;}-->
+				<!--{/loop}-->
+				
+			<!--{/if}-->
+                            						</ul>
+					</div>
+				</div>
+				
+
+
+				<div id="right" class="y">
+					<div class="track">
+						<i></i>
+					</div>
+					<div class="content" style="padding-bottom:0;">
+						<div id="news_list">
+							<ul>
+							
+							<!--{loop $list['list'] $value}-->
+				<!--{eval $highlight = article_title_style($value);}-->
+				<!--{eval $article_url = fetch_article_url($value);}-->
+				
+			
+                                <li>
+									<div class="z news_time">$value[dateline]</div>
+									<div class="y news_info cl">
+										<a class="news_info_title cl" href="$article_url" target="_blank" class="xi2" $highlight>$value[title]<!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--></a>
+										<p style="height: 90px; width:775px; overzow:hidden;"><!--{if $value[pic]}--><a href="$article_url" target="_blank"><img style="float:left; width:160px; height:90px; padding-right:10px;" src="$value[pic]" alt="$value[title]" class="tn" /></a><!--{/if}-->$value[summary]</p>
+										
+										<!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $value['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $value['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+							<p style="margin-bottom:0px; line-height:14px;"><a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$value[aid]">{lang edit}</a><span class="pipe">|</span>
+							<a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$value[aid]" id="article_delete_$value[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a></p>
+						<!--{/if}-->
+									</div>
+									<div class="clear"></div>
+									<i class="li_i"></i>
+								</li>
+                                <!--{/loop}-->
+                                							</ul>
+										<!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+													</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+				<script>
+jq(document).ready(function(){
+	jq('#menu li a').each(function(){
+		if(jq(jq(this))[0].href==String(window.location))
+			jq(this).parent().addClass('menu_cur');
+	});
+})
+</script>
+<!--{template common/footer}-->
+
+
+
+

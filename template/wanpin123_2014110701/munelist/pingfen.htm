@@ -1,0 +1,60 @@
+<div id="post_act" style="">
+
+            <div class="bm xm_bm post_new" style=" margin-bottom:0">
+                <div class="bm_c">
+               
+																<!--{if !$_G['forum_thread']['is_archived']}-->
+		<a id="newspecialtmp" onmouseover="$('newspecial').id = 'newspecialtmp';this.id = 'newspecial';showMenu({'ctrlid':this.id})"{if !$_G['forum']['allowspecialonly'] && empty($_G['forum']['picstyle']) && !$_G['forum']['threadsorts']['required']} onclick="showWindow('newthread', 'forum.php?mod=post&action=newthread&fid=$_G[fid]')"{else} onclick="location.href='forum.php?mod=post&action=newthread&fid=$_G[fid]';return false;"{/if} href="javascript:;" title="{lang send_posts}"><img alt="发新帖" src="template/wanpin123_2014110701/style/images/pn_post_big.png" /></a>
+	<!--{/if}-->
+																
+																</a>
+                                                        </div>
+            </div>
+
+                        <div class="bm xm_bm post_act">
+                <div class="bm_c">
+                    <ul>
+                        <li class="a1">
+                                                        <!--不能点-->
+                        <!--{if (!$_G['uid'] || $allowpostreply) && !$needhiddenreply}-->
+						
+							<a data="r" href="forum.php?mod=post&action=reply&fid=$_G[fid]&tid=$_G[tid]&reppost=$post[pid]&extra=$_GET[extra]&page=$page" onclick="showWindow('reply', this.href)">{lang reply}&nbsp;</a><!--{else}--><span>回复</span>
+					<!--{/if}-->
+						
+                                                    </li>
+                        <li class="a2">
+                                                            <!--不能点-->
+                                
+					
+					<!--{if $allowblockrecommend}--><a href="javascript:;" onclick="modaction('recommend', '$_G[forum_firstpid]', 'op=recommend&idtype={if $_G[forum_thread][isgroup]}gtid{else}tid{/if}&id=$_G[tid]&pid=$post[pid]', 'portal.php?mod=portalcp&ac=portalblock')">{lang modmenu_blockrecommend}</a><!--{else}--><span>{lang modmenu_blockrecommend}</span><!--{/if}-->
+                                                    </li>
+                        <li class="a3">
+                                                            <!--不能点-->
+                               
+					<!--{if !$post['anonymous'] && helper_access::check_module('follow')}-->
+						<a id="ak_rate" href="home.php?mod=spacecp&ac=follow&op=relay&tid=$_G[tid]&from=forum" onclick="showWindow('relaythread', this.href, 'get', 0);" title="{lang follow_spread}">{lang thread_realy}</a><!--{else}--><span>{lang thread_realy}</span>
+					<!--{/if}-->
+                                                    </li>
+                        <li class="a4">
+						<a id="shareLink" href="home.php?mod=spacecp&ac=share&type=thread&id=$_G[tid]" onclick="showWindow('sharethread', this.href, 'get', 0);" title="{lang share_digest}" class="a4" >{lang thread_share}</a>
+					
+                        </li>
+                    </ul>
+                   <script type="text/javascript">
+(function(){
+var postAct = document.getElementById("post_act");
+var postActTop = postAct.offsetTop;
+document.onscroll = function() {
+var docTop = document.body.scrollTop | document.documentElement.scrollTop;
+if (postActTop < (docTop + 10)) {
+postAct.setAttribute("style", "position:fixed; top: 70px; z-index:300; box-shadow: 0 0 5px 2px rgba(0,0,0,0.3);width:265px;" );
+} else {
+postAct.setAttribute("style", "");
+}
+}
+})()
+</script>
+                </div>
+            </div>
+            
+        </div>
